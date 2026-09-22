@@ -1,4 +1,4 @@
-# Piralib
+# Piralib v1
 
 A curated index of the best anime resources on the internet.
 
