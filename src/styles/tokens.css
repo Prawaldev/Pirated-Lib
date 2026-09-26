@@ -18,8 +18,8 @@
   --parallax-2: transparent;
   --parallax-3: transparent;
 
-  --font-body: 'Ubuntu Sans Mono', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
-  --font-mono: 'Ubuntu Sans Mono', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+  --font-body: 'Brass Mono Code', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+  --font-mono: 'Brass Mono Code', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
 
   --text-xs:   0.875rem;
   --text-sm:   1rem;

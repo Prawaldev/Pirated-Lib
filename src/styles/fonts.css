@@ -1,0 +1,35 @@
+/* Brass Mono Code v1.101 — Copyright (c) 2020 Peter Fonseca
+   Licensed under the SIL Open Font License 1.1
+   https://github.com/fonsecapeter/brass_mono */
+
+@font-face {
+  font-family: 'Brass Mono Code';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/BrassMonoCode-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Brass Mono Code';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/BrassMonoCode-Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Brass Mono Code';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/BrassMonoCode-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Brass Mono Code';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/BrassMonoCode-BoldItalic.woff2') format('woff2');
+}
