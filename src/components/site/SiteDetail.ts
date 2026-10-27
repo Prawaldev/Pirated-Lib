@@ -14,7 +14,7 @@ export function SiteDetail(
   onSaveNote: (id: string, note: string) => void,
   categories: Category[] = [],
 ): HTMLElement {
-  const container = el('div', {})
+  const container = el('div', { class: 'site-detail' })
 
   const catMap = new Map(categories.map(c => [c.id, c.name]))
   const subcatMap = new Map(categories.flatMap(c => c.subcategories.map(s => [s.id, s.name])))

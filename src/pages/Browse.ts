@@ -93,7 +93,7 @@ export function BrowsePage(
     filtered.forEach(s => list.appendChild(SiteListItem(s, favIds.includes(s.id))))
     page.appendChild(list)
   } else {
-    const compact = el('div', { style: 'border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;' })
+    const compact = el('div', { style: 'background:var(--surface-raised);border-radius:var(--radius);overflow:hidden;' })
     filtered.forEach(s => compact.appendChild(SiteCompact(s)))
     page.appendChild(compact)
   }

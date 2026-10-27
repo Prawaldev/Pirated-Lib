@@ -147,19 +147,23 @@ function applySettings() {
   root.classList.toggle('reduce-blur', !state.blurEnabled)
   root.classList.toggle('reduce-parallax', !state.parallaxEnabled)
 
-  const accentMap: Record<string, string> = {
-    amber: '#d4a373',
-    gold: '#e9c46a',
-    emerald: '#56d364',
-    sky: '#62cff4',
-    rose: '#f4717e',
-    violet: '#bc8cff',
+  const accentMap: Record<string, { dark: string; light: string }> = {
+    blossom: { dark: '#f7b3ef', light: '#683366' },
+    lilac:   { dark: '#c9a7f5', light: '#573578' },
+    sky:     { dark: '#a8c7fa', light: '#2f4d78' },
+    sage:    { dark: '#b8d1a8', light: '#3f5a31' },
+    gold:    { dark: '#d2d389', light: '#5c5a1f' },
+    rose:    { dark: '#f4a7b9', light: '#7a3042' },
   }
-  const color = accentMap[state.accentColor] || accentMap.amber
+  const palette = accentMap[state.accentColor] || accentMap.blossom
+  const color = state.theme === 'light' ? palette.light : palette.dark
   root.style.setProperty('--accent', color)
   root.style.setProperty('--accent-hover', adjustColor(color, 20))
   root.style.setProperty('--accent-dim', adjustColor(color, -40))
-  root.style.setProperty('--accent-soft', `color-mix(in srgb, ${color} 20%, transparent)`)
+  root.style.setProperty('--accent-soft', `color-mix(in srgb, ${color} 14%, transparent)`)
+  root.style.setProperty('--signal', color)
+  root.style.setProperty('--signal-dim', adjustColor(color, -30))
+  root.style.setProperty('--link', color)
 }
 
 function adjustColor(hex: string, amount: number): string {

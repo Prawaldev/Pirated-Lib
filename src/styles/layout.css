@@ -7,10 +7,8 @@
 .app-sidebar {
   width: var(--sidebar-width);
   flex-shrink: 0;
-  background: var(--glass-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-right: 1px solid var(--glass-border);
+  background: var(--surface);
+  border-right: 1px solid var(--line-soft);
   overflow-y: auto;
   height: calc(100vh - var(--nav-height));
   position: sticky;
@@ -22,7 +20,7 @@
 .app-main {
   flex: 1;
   min-width: 0;
-  padding: var(--space-8);
+  padding: clamp(1.25rem, 2.6vw, 2.6rem);
   max-width: var(--layout-max-width);
   margin: 0 auto;
   position: relative;
@@ -49,15 +47,13 @@
     padding: var(--space-4) var(--space-3);
     padding-bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
     margin: 0.5rem;
-    background: color-mix(in srgb, var(--bg-secondary) 90%, transparent);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-xl);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
     overflow-y: auto;
     overscroll-behavior: contain;
-    animation: slide-in-left 0.3s var(--ease-out-expo);
+    animation: slide-in-left 0.3s var(--ease-terminal);
   }
 
   .app-sidebar.open {
@@ -67,9 +63,9 @@
   .app-sidebar-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: var(--overlay);
     z-index: 199;
-    animation: fade-in 0.2s var(--ease-out-expo);
+    animation: fade-in 0.2s var(--ease-terminal);
   }
 
   .app-main {

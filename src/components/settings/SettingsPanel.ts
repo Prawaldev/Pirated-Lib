@@ -28,12 +28,12 @@ export function SettingsPanel(
   accentGroup.appendChild(el('div', { class: 'settings-group-title' }, 'Accent Color'))
   const picker = el('div', { class: 'accent-picker' })
   const colors: Record<string, string> = {
-    amber: '#d4a373',
-    gold: '#e9c46a',
-    emerald: '#56d364',
-    sky: '#62cff4',
-    rose: '#f4717e',
-    violet: '#bc8cff',
+    blossom: '#f7b3ef',
+    lilac: '#c9a7f5',
+    sky: '#a8c7fa',
+    sage: '#b8d1a8',
+    gold: '#d2d389',
+    rose: '#f4a7b9',
   }
   Object.entries(colors).forEach(([name, hex]) => {
     const swatch = el('div', {

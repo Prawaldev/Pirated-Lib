@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Piralib — Curated Anime Resource Directory</title>
   <meta name="description" content="A curated index of the best anime resources on the internet. Hand-picked streaming sites, download sources, tools, and more.">
-  <meta name="theme-color" content="#0d1117">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark light">
   <link rel="icon" type="image/x-icon" href="%BASE_URL%favicon_io/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="%BASE_URL%favicon_io/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon_io/favicon-32x32.png">
@@ -14,6 +15,20 @@
   <meta property="og:description" content="A curated index of the best anime resources on the internet.">
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
+  <script>
+    // apply the saved theme before first paint so the page never flashes
+    (function () {
+      try {
+        var saved = localStorage.getItem('piralib-theme')
+        var theme = saved ? JSON.parse(saved) : null
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.dataset.theme = theme
+        }
+      } catch (error) {
+        /* private mode — keep the dark default */
+      }
+    })()
+  </script>
   <script type="module" src="/src/main.ts"></script>
 </head>
 <body>

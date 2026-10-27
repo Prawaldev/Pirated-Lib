@@ -34,12 +34,13 @@ export const DEFAULT_STATE: AppState = {
   recentSearches: [],
   siteNotes: {},
   sidebarOpen: true,
-  accentColor: 'amber',
+  accentColor: 'blossom',
   blurEnabled: true,
   parallaxEnabled: true,
 }
 
 export function loadState(): AppState {
+  const storedAccent = get<string>('accent-color', 'blossom')
   return {
     theme: get<'dark' | 'light'>('theme', DEFAULT_STATE.theme),
     view: get<'grid' | 'list' | 'compact'>('view', DEFAULT_STATE.view),
@@ -49,7 +50,7 @@ export function loadState(): AppState {
     recentSearches: get<string[]>('recent-searches', []),
     siteNotes: get<Record<string, string>>('site-notes', {}),
     sidebarOpen: get<boolean>('sidebar-open', true),
-    accentColor: get<string>('accent-color', 'amber'),
+    accentColor: storedAccent === 'amber' ? 'blossom' : storedAccent,
     blurEnabled: get<boolean>('blur-enabled', true),
     parallaxEnabled: get<boolean>('parallax-enabled', true),
   }

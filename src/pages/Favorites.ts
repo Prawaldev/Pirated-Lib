@@ -49,7 +49,7 @@ export function FavoritesPage(
     favSites.forEach(s => list.appendChild(SiteListItem(s, true)))
     page.appendChild(list)
   } else {
-    const compact = el('div', { style: 'border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;' })
+    const compact = el('div', { style: 'background:var(--surface-raised);border-radius:var(--radius);overflow:hidden;' })
     favSites.forEach(s => {
       const row = el('div', { class: 'site-compact' })
       const starEl = el('span', { style: 'color:var(--accent);display:inline-flex;' })

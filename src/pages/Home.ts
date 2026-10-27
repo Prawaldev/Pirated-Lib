@@ -10,7 +10,10 @@ export function HomePage(sites: Site[], categories: Category[], favIds: string[]
   const page = el('div', {})
 
   const hero = el('div', { class: 'hero-minimal animate-fade-in' })
-  const heroTitle = el('div', { class: 'hero-title' }, 'Piralib')
+  hero.appendChild(el('p', { class: 'hero-label' }, '// curated anime archive'))
+  const heroTitle = el('div', { class: 'hero-title' })
+  heroTitle.appendChild(document.createTextNode('Piralib'))
+  heroTitle.appendChild(el('span', { class: 'caret', 'aria-hidden': 'true' }))
   hero.appendChild(heroTitle)
   hero.appendChild(el('p', {}, 'A curated index of the best anime resources on the internet.'))
   const meta = el('div', { class: 'hero-meta' })
@@ -24,8 +27,8 @@ export function HomePage(sites: Site[], categories: Category[], favIds: string[]
   page.appendChild(clickMe)
 
   const catSection = el('div', { class: 'home-categories animate-fade-in-up' })
-  const catTitle = el('h2', { class: 'section-title', style: 'margin-bottom:var(--space-3);text-align:center;' })
-  catTitle.innerHTML = `${icon('grid3x3', 18)} Browse by Category`
+  const catTitle = el('h2', { class: 'section-title', style: 'margin-bottom:var(--space-3);' })
+  catTitle.innerHTML = `<span class="prompt">01.</span> Browse by Category`
   catSection.appendChild(catTitle)
 
   const catGrid = el('div', { class: 'category-grid' })
@@ -69,7 +72,7 @@ export function HomePage(sites: Site[], categories: Category[], favIds: string[]
   if (recent.length > 0) {
     const recentSection = el('div', { class: 'home-recent animate-fade-in-up' })
     const recentTitle = el('h2', { class: 'section-title', style: 'margin-bottom:var(--space-3);' })
-    recentTitle.innerHTML = `${icon('clock', 18)} Recent Additions & Updates`
+    recentTitle.innerHTML = `<span class="prompt">02.</span> Recent Additions &amp; Updates`
     recentSection.appendChild(recentTitle)
     const grid = el('div', { class: 'site-grid' })
     recent.forEach(s => grid.appendChild(SiteCard(s, favIds.includes(s.id))))
