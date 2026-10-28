@@ -3,28 +3,15 @@ import { icon, icons } from '../utils/icons'
 import { SiteCard } from '../components/site/SiteCard'
 import { pluralize } from '../utils/format'
 import { navigate, basePath } from '../utils/router'
-import { AnimeClickMe } from '../components/ui/AnimeClickMe'
 import type { Site, Category } from '../types'
 
 export function HomePage(sites: Site[], categories: Category[], favIds: string[], recentIds?: Set<string>): HTMLElement {
   const page = el('div', {})
 
-  const hero = el('div', { class: 'hero-minimal animate-fade-in' })
-  hero.appendChild(el('p', { class: 'hero-label' }, '// curated anime archive'))
-  const heroTitle = el('div', { class: 'hero-title' })
-  heroTitle.appendChild(document.createTextNode('Piralib'))
-  heroTitle.appendChild(el('span', { class: 'caret', 'aria-hidden': 'true' }))
-  hero.appendChild(heroTitle)
-  hero.appendChild(el('p', {}, 'A curated index of the best anime resources on the internet.'))
-  const meta = el('div', { class: 'hero-meta' })
-  meta.appendChild(el('span', {}, `${pluralize(sites.length, 'site')}`))
-  meta.appendChild(el('span', {}, `${pluralize(categories.length, 'category')}`))
-  hero.appendChild(meta)
+  const hero = el('div', { class: 'hero-minimal animate-fade-in', style: 'display:flex;align-items:center;justify-content:center;padding:var(--space-8);' })
+  const img = el('img', { src: basePath('/hello.jpg'), alt: 'satre', style: 'max-width:100%;height:auto;max-height:320px;border-radius:var(--radius);' }) as HTMLImageElement
+  hero.appendChild(img)
   page.appendChild(hero)
-
-  const clickMe = el('div', { style: 'text-align:center;margin-bottom:var(--space-6);' })
-  clickMe.appendChild(AnimeClickMe())
-  page.appendChild(clickMe)
 
   const catSection = el('div', { class: 'home-categories animate-fade-in-up' })
   const catTitle = el('h2', { class: 'section-title', style: 'margin-bottom:var(--space-3);' })
